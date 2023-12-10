@@ -5,7 +5,7 @@ import { Config } from 'src/config/type';
 
 export const devtoolsModule = DevtoolsModule.registerAsync({
   imports: [ConfigModule],
-  useFactory: async (configService: ConfigService<Config, true>) => {
+  useFactory: (configService: ConfigService<Config, true>) => {
     const env = configService.get('app.env', { infer: true });
 
     return {
